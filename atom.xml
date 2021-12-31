@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://chanmanseui.github.io</id>
+    <title>Leo Min-rui CHEN&apos;s BLOG</title>
+    <updated>2021-12-31T13:36:18.623Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://chanmanseui.github.io"/>
+    <link rel="self" href="https://chanmanseui.github.io/atom.xml"/>
+    <subtitle>A BLOG FOR RECORD DAILY LEARNING</subtitle>
+    <logo>https://chanmanseui.github.io/images/avatar.png</logo>
+    <icon>https://chanmanseui.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, Leo Min-rui CHEN&apos;s BLOG</rights>
+    <entry>
+        <title type="html"><![CDATA[Some Learning Material [UPDATING]]]></title>
+        <id>https://chanmanseui.github.io/post/some-learning-material-updating/</id>
+        <link href="https://chanmanseui.github.io/post/some-learning-material-updating/">
+        </link>
+        <updated>2021-12-31T13:11:49.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="mathmatics">Mathmatics</h1>
+<h2 id="calculus">CALCULUS</h2>
+<h3 id="1-mit公开课单变量微积分中英字幕">1 .【MIT公开课】单变量微积分（中英字幕）</h3>
+<p>URL：https://www.bilibili.com/video/BV1T4411v7iP</p>
+<h3 id="2mit公开课多重变量微积分中英字幕">2.【MIT公开课】多重变量微积分（中英字幕）</h3>
+<p>URL：https://www.bilibili.com/video/BV1P4411v7BP</p>
+<h2 id="probability-and-statistics">PROBABILITY AND STATISTICS</h2>
+<h3 id="3-英字mit公开课-概率论">3. 【英字】MIT公开课 概率论</h3>
+<p>URL：https://www.bilibili.com/video/BV19s41167TE</p>
+]]></content>
+    </entry>
+</feed>
