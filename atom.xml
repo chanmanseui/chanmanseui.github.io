@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chanmanseui.github.io</id>
     <title>Leo Min-rui CHEN&apos;s BLOG</title>
-    <updated>2021-12-31T13:49:19.171Z</updated>
+    <updated>2021-12-31T15:53:38.197Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chanmanseui.github.io"/>
     <link rel="self" href="https://chanmanseui.github.io/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://chanmanseui.github.io/images/avatar.png</logo>
     <icon>https://chanmanseui.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Leo Min-rui CHEN&apos;s BLOG</rights>
+    <entry>
+        <title type="html"><![CDATA[HAPPY NEW YEAR!]]></title>
+        <id>https://chanmanseui.github.io/post/happy-new-year/</id>
+        <link href="https://chanmanseui.github.io/post/happy-new-year/">
+        </link>
+        <updated>2021-12-31T15:44:54.000Z</updated>
+        <content type="html"><![CDATA[<p>On the last day of 2021, there are no pedestrians on the street(except me), while lots of cars.</p>
+<p>Now, I would like to seize the day and live it to the full and greet the arrival of the year 2022.</p>
+<p>Thanks to everyone I met this year.</p>
+<p>Happy new year!</p>
+<p>2021/12/31 Night, in Zhu Hai</p>
+<p><img src="https://chanmanseui.github.io/post-images/1640965750566.jpg" alt="Fig.1 Road" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1640965915241.jpg" alt="Fig.2 Flag" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Some Learning Material [UPDATING]]]></title>
         <id>https://chanmanseui.github.io/post/some-learning-material-updating/</id>
