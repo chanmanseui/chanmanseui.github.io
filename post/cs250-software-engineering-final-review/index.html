@@ -1,0 +1,282 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CS250 SOFTWARE ENGINEERING FINAL REVIEW[UPDATING] | Leo Min-rui CHEN&#39;s BLOG</title>
+<link rel="shortcut icon" href="https://chanmanseui.github.io/favicon.ico?v=1641049530190">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://chanmanseui.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="CS250 SOFTWARE ENGINEERING FINAL REVIEW[UPDATING] | Leo Min-rui CHEN&#39;s BLOG - Atom Feed" href="https://chanmanseui.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Software Process
+PERT diagram [Project Scheduling]
+Function
+1. Model for project management and planning
+a. Represent ta..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://chanmanseui.github.io">
+  <img class="avatar" src="https://chanmanseui.github.io/images/avatar.png?v=1641049530190" alt="">
+  </a>
+  <h1 class="site-title">
+    Leo Min-rui CHEN&#39;s BLOG
+  </h1>
+  <p class="site-description">
+    A BLOG FOR RECORD DAILY LEARNING
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          Front Page
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          Category
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Label
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          About Me
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/chanmanseui" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/chen_minrui" target="_blank">
+          <i class="ri-twitter-line"></i>
+        </a>
+      
+    
+      
+    
+      
+        <a href="https://www.zhihu.com/people/aragakiyui-13" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              CS250 SOFTWARE ENGINEERING FINAL REVIEW[UPDATING]
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-01-01
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="software-process">Software Process</h1>
+<h2 id="pert-diagram-project-scheduling">PERT diagram [Project Scheduling]</h2>
+<h3 id="function">Function</h3>
+<h4 id="1-model-for-project-management-and-planning">1. Model for project management and planning</h4>
+<p>a. Represent tasks and their dependencies.<br>
+b. Estimate amount of time for each task.<br>
+c. Compute the time for entire project and the critical path.</p>
+<h3 id="example">Example</h3>
+<figure data-type="image" tabindex="1"><img src="https://chanmanseui.github.io/post-images/1641021067108.png" alt="Fig.1 Description of activities" loading="lazy"></figure>
+<h4 id="1-some-basic-concepts">1. Some basic concepts:</h4>
+<p>a. Oriented Graph – Each node is to represent a <strong>status</strong>; while each edge is<br>
+to represent a <strong>activity</strong>.<br>
+b. Critical path – path that takes <strong>longest</strong>.<br>
+c. Critical activity – Activity on the critical path.<br>
+<img src="https://chanmanseui.github.io/post-images/1641021393355.png" alt="Fig.2 Network" loading="lazy"></p>
+<h4 id="2-time-calculationes-ef-ls-lf-towarding-to-a-specific-activaty">2. TIME CALCULATION[ES, EF, LS, LF] --- Towarding to a specific activaty.</h4>
+<p>a. Eq.(A): Earliest Start (ES) Time = max{EFs of all immediate predecessors}<br>
+b. Eq.(B): Earliest Finish (EF) Time = ES + time of this activity<br>
+c. Eq.(C): Latest Start (LS) Time = LF – time of this activity<br>
+d. Eq.(D): Latest Finish (LF) Time = min{LSs of all immediate successors}<br>
+e. Initialization:<br>
+• ES of the first activity = 0.<br>
+• LF of the last activity = EF of the project.<br>
+f. Slack time[extra time for task]: Slack = LS – ES = LF – EF</p>
+<h4 id="3-a-gereral-method-for-analysing-the-pert-diagramreally-important">3. A gereral method for analysing the PERT diagram[REALLY IMPORTANT]:</h4>
+<p>a. Initialize the ES of the first activity as 0, and then calculate the EF using Eq.(B).<br>
+b. Calculate the ES and EF of the successors from begin to end, according<br>
+to the Eq. (A) and Eq. (B).<br>
+c. Assign the EF of the project as the LF of the last activity, and the<br>
+calculate the LS using Eq.(C).<br>
+d. Calculate the LF and LS of the successors from begin to end, according<br>
+to the Eq. (D) and Eq. (C).</p>
+<h4 id="4-problems">4. PROBLEMS:</h4>
+<p>Q1: Which activities are critical to complete the project?<br>
+Q2: How many days it will require to complete the project?<br>
+Sol:<br>
+a. Stanard answer:<br>
+<img src="https://chanmanseui.github.io/post-images/1641040523685.png" alt="Fig. 3 Stanard ANSWER -- Q1 &amp;&amp; Q2" loading="lazy"><br>
+b. My answer:<br>
+<img src="https://chanmanseui.github.io/post-images/1641040422172.jpg" alt="Fig. 4 MY ANSWER -- Q1 &amp;&amp; Q2" loading="lazy"><br>
+Q3: How probable is that the critical path will be completed in less than<br>
+47 days?<br>
+<img src="https://chanmanseui.github.io/post-images/1641040677768.png" alt="Fig. 5 Days estimation" loading="lazy"></p>
+<ul>
+<li>Some new concepts:<br>
+• Estimated time of the completion of an activity: (a + 4m + b) / 6<br>
+• Variance: (b - a) / 36<br>
+• Standard Deviation = sqrt(variances of critical activities)<br>
+Sol:<br>
+a. Stanard answer:<br>
+<img src="https://chanmanseui.github.io/post-images/1641042339963.png" alt="Fig. 6 Stanard ANSWER -- Q3" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641042375404.png" alt="Fig. 7 Stanard ANSWER -- Q3" loading="lazy"><br>
+b. My answer:<br>
+<img src="https://chanmanseui.github.io/post-images/1641042401126.jpg" alt="Fig. 8 MY ANSWER -- Q8" loading="lazy"></li>
+</ul>
+<h1 id="requirements-analysis">Requirements Analysis</h1>
+<h2 id="e-r-diagramdata-modelling">E-R Diagram[Data Modelling]</h2>
+<h3 id="concepts">Concepts</h3>
+<p><img src="https://chanmanseui.github.io/post-images/1641044845420.jpg" alt="Fig. 9 ER-Diagram" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641044883803.jpg" alt="Fig. 10 ER-Diagram" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641044908700.jpg" alt="Fig. 11 ER-Diagram" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641044937420.jpg" alt="Fig. 12 ER-Diagram" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641044970854.jpg" alt="Fig. 13 ER-Diagram" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641044983714.jpg" alt="Fig. 14 ER-Diagram" loading="lazy"></p>
+<h3 id="example-2">Example</h3>
+<p><img src="https://chanmanseui.github.io/post-images/1641045007598.jpg" alt="Fig. 16 ER-Diagram Example" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641045033025.jpg" alt="Fig. 17 ER-Diagram Example" loading="lazy"></p>
+<h2 id="data-flow-diagram-dfdfunction-modelling">Data Flow Diagram (DFD)[Function Modelling]</h2>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#software-process">Software Process</a>
+<ul>
+<li><a href="#pert-diagram-project-scheduling">PERT diagram [Project Scheduling]</a>
+<ul>
+<li><a href="#function">Function</a>
+<ul>
+<li><a href="#1-model-for-project-management-and-planning">1. Model for project management and planning</a></li>
+</ul>
+</li>
+<li><a href="#example">Example</a>
+<ul>
+<li><a href="#1-some-basic-concepts">1. Some basic concepts:</a></li>
+<li><a href="#2-time-calculationes-ef-ls-lf-towarding-to-a-specific-activaty">2. TIME CALCULATION[ES, EF, LS, LF] --- Towarding to a specific activaty.</a></li>
+<li><a href="#3-a-gereral-method-for-analysing-the-pert-diagramreally-important">3. A gereral method for analysing the PERT diagram[REALLY IMPORTANT]:</a></li>
+<li><a href="#4-problems">4. PROBLEMS:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#requirements-analysis">Requirements Analysis</a>
+<ul>
+<li><a href="#e-r-diagramdata-modelling">E-R Diagram[Data Modelling]</a>
+<ul>
+<li><a href="#concepts">Concepts</a></li>
+<li><a href="#example-2">Example</a></li>
+</ul>
+</li>
+<li><a href="#data-flow-diagram-dfdfunction-modelling">Data Flow Diagram (DFD)[Function Modelling]</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://chanmanseui.github.io/post/happy-new-year/">
+              <h3 class="post-title">
+                HAPPY NEW YEAR!
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://chanmanseui.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
