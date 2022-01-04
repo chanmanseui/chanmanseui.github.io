@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chanmanseui.github.io</id>
     <title>Leo Min-rui CHEN&apos;s BLOG</title>
-    <updated>2022-01-01T15:06:23.729Z</updated>
+    <updated>2022-01-04T16:49:39.963Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chanmanseui.github.io"/>
     <link rel="self" href="https://chanmanseui.github.io/atom.xml"/>
@@ -11,7 +11,23 @@
     <icon>https://chanmanseui.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Leo Min-rui CHEN&apos;s BLOG</rights>
     <entry>
-        <title type="html"><![CDATA[CS250 SOFTWARE ENGINEERING FINAL REVIEW[UPDATING]]]></title>
+        <title type="html"><![CDATA[Organic Chemistry Lecture 2.1(part 1) Note(IN CHINESE) -- Lewis电子配对理论，Lewis结构式，形式电荷]]></title>
+        <id>https://chanmanseui.github.io/post/organic-chemistry-lecture-21part-1-notein-chinese-lewis-dian-zi-pei-dui-li-lun-lewis-jie-gou-shi-xing-shi-dian-he/</id>
+        <link href="https://chanmanseui.github.io/post/organic-chemistry-lecture-21part-1-notein-chinese-lewis-dian-zi-pei-dui-li-lun-lewis-jie-gou-shi-xing-shi-dian-he/">
+        </link>
+        <updated>2022-01-04T16:42:46.000Z</updated>
+        <content type="html"><![CDATA[<p><img src="https://chanmanseui.github.io/post-images/1641314892328.png" alt="" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641314898381.png" alt="" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641314902816.png" alt="" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641314908544.png" alt="" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641314913559.png" alt="" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641314917676.png" alt="" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641314921674.png" alt="" loading="lazy"><br>
+<img src="https://chanmanseui.github.io/post-images/1641314925991.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PERT diagram && E-R Diagram]]></title>
         <id>https://chanmanseui.github.io/post/cs250-software-engineering-final-review/</id>
         <link href="https://chanmanseui.github.io/post/cs250-software-engineering-final-review/">
         </link>
@@ -83,7 +99,6 @@ b. My answer:<br>
 <h3 id="example-2">Example</h3>
 <p><img src="https://chanmanseui.github.io/post-images/1641045007598.jpg" alt="Fig. 16 ER-Diagram Example" loading="lazy"><br>
 <img src="https://chanmanseui.github.io/post-images/1641045033025.jpg" alt="Fig. 17 ER-Diagram Example" loading="lazy"></p>
-<h2 id="data-flow-diagram-dfdfunction-modelling">Data Flow Diagram (DFD)[Function Modelling]</h2>
 ]]></content>
     </entry>
     <entry>
