@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>动态规划初探 -- 以 &#34;Leetcode Q.53. 最大子数组和&#34; 为例 | Leo Min-rui CHEN&#39;s BLOG</title>
-<link rel="shortcut icon" href="https://chanmanseui.github.io/favicon.ico?v=1649166508048">
+<link rel="shortcut icon" href="https://chanmanseui.github.io/favicon.ico?v=1649166735753">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://chanmanseui.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="动态规划初探 -- 以 &#34;Leetcode Q.53. 最大子数组和&#34; 为例 | Leo Min-rui CHEN&#39;s BLOG - Atom Feed" href="https://chanmanseui.github.io/atom.xml">
@@ -26,7 +26,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://chanmanseui.github.io">
-  <img class="avatar" src="https://chanmanseui.github.io/images/avatar.png?v=1649166508048" alt="">
+  <img class="avatar" src="https://chanmanseui.github.io/images/avatar.png?v=1649166735753" alt="">
   </a>
   <h1 class="site-title">
     Leo Min-rui CHEN&#39;s BLOG
@@ -119,31 +119,33 @@
 <p>而子问题的定义必须以一个数结尾，因此如果子问题 i 的结果是负数或者 0，那么子问题 i + 1 的答案就是以 nums[i] 结尾的那个数。</p>
 <p>However, 这里状态的定义不是题目中的问题的定义，<strong>不能直接将最后一个状态返回回去</strong>。</p>
 <h3 id="my-answer">My answer:</h3>
-<p>`//Using Dynamic Programming</p>
-<p>class Solution {<br>
-public:<br>
-int maxSubArray(vector<int>&amp; nums) {<br>
-int len = nums.size();<br>
-int maxsum[len];<br>
-int maxValue;</p>
-<pre><code>    maxsum[0] = nums[0];
-    for(int i=1; i&lt;len; i++){
-        if(maxsum[i-1]&gt;0)
-            maxsum[i] = maxsum[i-1] + nums[i];
-        else
-            maxsum[i] = nums[i];
-    }
+<pre><code>//Using Dynamic Programming
 
-    maxValue = maxsum[0];
-    for(int i=1; i&lt;len; i++){
-        if(maxsum[i]&gt;maxValue)
-            maxValue=maxsum[i];
-    }
+class Solution {
+public:
+    int maxSubArray(vector&lt;int&gt;&amp; nums) {
+        int len = nums.size();
+        int maxsum[len];
+        int maxValue;
 
-    return maxValue;
-}
+        maxsum[0] = nums[0];
+        for(int i=1; i&lt;len; i++){
+            if(maxsum[i-1]&gt;0)
+                maxsum[i] = maxsum[i-1] + nums[i];
+            else
+                maxsum[i] = nums[i];
+        }
+
+        maxValue = maxsum[0];
+        for(int i=1; i&lt;len; i++){
+            if(maxsum[i]&gt;maxValue)
+                maxValue=maxsum[i];
+        }
+
+        return maxValue;
+    }
+};
 </code></pre>
-<p>};`</p>
 
               </div>
               <div class="toc-container">
