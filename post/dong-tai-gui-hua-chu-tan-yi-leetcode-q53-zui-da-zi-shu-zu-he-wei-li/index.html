@@ -2,24 +2,21 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Organic Chemistry Lecture 2.1(part 1) Note(IN CHINESE) -- Lewis电子配对理论，Lewis结构式，形式电荷 | Leo Min-rui CHEN&#39;s BLOG</title>
+<title>动态规划初探 -- 以 &#34;Leetcode Q.53. 最大子数组和&#34; 为例 | Leo Min-rui CHEN&#39;s BLOG</title>
 <link rel="shortcut icon" href="https://chanmanseui.github.io/favicon.ico?v=1649166508048">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://chanmanseui.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Organic Chemistry Lecture 2.1(part 1) Note(IN CHINESE) -- Lewis电子配对理论，Lewis结构式，形式电荷 | Leo Min-rui CHEN&#39;s BLOG - Atom Feed" href="https://chanmanseui.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="动态规划初探 -- 以 &#34;Leetcode Q.53. 最大子数组和&#34; 为例 | Leo Min-rui CHEN&#39;s BLOG - Atom Feed" href="https://chanmanseui.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="
-
-
-
-
-
-
-
-..." />
+    <meta name="description" content="问题：最大子数组和
+给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+”子数组“ 是数组中的一个连续部分。
+子问题的“后效性”
+子问题的描述还有不确定的地方，叫做有“后效性”。
+在定..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -94,32 +91,76 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Organic Chemistry Lecture 2.1(part 1) Note(IN CHINESE) -- Lewis电子配对理论，Lewis结构式，形式电荷
+              动态规划初探 -- 以 &#34;Leetcode Q.53. 最大子数组和&#34; 为例
             </h2>
             <div class="post-info">
               <span>
-                2022-01-05
+                2022-04-05
               </span>
               <span>
-                0 min read
+                2 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p><img src="https://chanmanseui.github.io/post-images/1641314892328.png" alt="" loading="lazy"><br>
-<img src="https://chanmanseui.github.io/post-images/1641314898381.png" alt="" loading="lazy"><br>
-<img src="https://chanmanseui.github.io/post-images/1641314902816.png" alt="" loading="lazy"><br>
-<img src="https://chanmanseui.github.io/post-images/1641314908544.png" alt="" loading="lazy"><br>
-<img src="https://chanmanseui.github.io/post-images/1641314913559.png" alt="" loading="lazy"><br>
-<img src="https://chanmanseui.github.io/post-images/1641314917676.png" alt="" loading="lazy"><br>
-<img src="https://chanmanseui.github.io/post-images/1641314921674.png" alt="" loading="lazy"><br>
-<img src="https://chanmanseui.github.io/post-images/1641314925991.png" alt="" loading="lazy"></p>
+                <h3 id="问题最大子数组和">问题：最大子数组和</h3>
+<p>给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<p>”子数组“ 是数组中的一个连续部分。</p>
+<h3 id="子问题的后效性">子问题的“后效性”</h3>
+<p>子问题的描述还有不确定的地方，叫做有“后效性”。</p>
+<p>在定义子问题时，须去除此类“后效性“的影响，加上了”以x数字结尾的“，这些子问题之间就有了联系。</p>
+<p>大家发现了吗，如果编号为 i 的子问题的结果是负数或者 0 ，那么编号为 i + 1 的子问题就可以把编号为 i 的子问题的结果舍弃掉（这里 i 为整数，最小值为 1 ，最大值为 8），这是因为：</p>
+<blockquote>
+<p>一个数 a 加上负数的结果比 a 更小；<br>
+一个数 a 加上 00 的结果不会比 a 更大；</p>
+</blockquote>
+<p>而子问题的定义必须以一个数结尾，因此如果子问题 i 的结果是负数或者 0，那么子问题 i + 1 的答案就是以 nums[i] 结尾的那个数。</p>
+<p>However, 这里状态的定义不是题目中的问题的定义，<strong>不能直接将最后一个状态返回回去</strong>。</p>
+<h3 id="my-answer">My answer:</h3>
+<p>`//Using Dynamic Programming</p>
+<p>class Solution {<br>
+public:<br>
+int maxSubArray(vector<int>&amp; nums) {<br>
+int len = nums.size();<br>
+int maxsum[len];<br>
+int maxValue;</p>
+<pre><code>    maxsum[0] = nums[0];
+    for(int i=1; i&lt;len; i++){
+        if(maxsum[i-1]&gt;0)
+            maxsum[i] = maxsum[i-1] + nums[i];
+        else
+            maxsum[i] = nums[i];
+    }
+
+    maxValue = maxsum[0];
+    for(int i=1; i&lt;len; i++){
+        if(maxsum[i]&gt;maxValue)
+            maxValue=maxsum[i];
+    }
+
+    return maxValue;
+}
+</code></pre>
+<p>};`</p>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E9%97%AE%E9%A2%98%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C">问题：最大子数组和</a></li>
+<li><a href="#%E5%AD%90%E9%97%AE%E9%A2%98%E7%9A%84%E5%90%8E%E6%95%88%E6%80%A7">子问题的“后效性”</a></li>
+<li><a href="#my-answer">My answer:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
@@ -128,9 +169,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://chanmanseui.github.io/post/cs250-software-engineering-final-review/">
+            <a href="https://chanmanseui.github.io/post/organic-chemistry-lecture-21part-1-notein-chinese-lewis-dian-zi-pei-dui-li-lun-lewis-jie-gou-shi-xing-shi-dian-he/">
               <h3 class="post-title">
-                PERT diagram &amp;&amp; E-R Diagram
+                Organic Chemistry Lecture 2.1(part 1) Note(IN CHINESE) -- Lewis电子配对理论，Lewis结构式，形式电荷
               </h3>
             </a>
           </div>
